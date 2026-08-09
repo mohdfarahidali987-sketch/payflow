@@ -30,7 +30,7 @@ A modern full-stack digital payment application built with the MERN stack that a
 
 ### Send Money
 
-![Send Money](./screenshots/send-money.png)
+![Send Money](./screenshots/sendmoney.png)
 
 
 ## ✨ Features
