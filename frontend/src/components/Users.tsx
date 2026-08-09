@@ -1,5 +1,5 @@
 import { useEffect,useState } from "react"
-import axios from "axios"
+import { api } from "../lib/api";
 import {User} from './User'
 interface UserType {
     _id: string;
@@ -11,20 +11,12 @@ export const Users=()=>{
     const [users, setUsers] = useState<UserType[]>([]);
     useEffect(() => {
     async function fetchUsers() {
-        try {
-            const response = await axios.get(
-                `http://localhost:3000/api/v1/user/bulk?filter=${filter}`,
-                {
-                    headers: {
-                        Authorization:
-                            "Bearer " + localStorage.getItem("token")
-                    }
-                }
-            );
+          try {
+            const response = await api.get(`/api/v1/user/bulk?filter=${filter}`);
 
             setUsers(response.data.user);
 
-        } catch (err) {
+                } catch (err) {
             console.log(err);
         }
     }
