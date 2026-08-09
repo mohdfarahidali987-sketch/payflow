@@ -73,24 +73,27 @@ A modern full-stack digital payment application built with the MERN stack that a
 - Mongoose
 
 
-## 📂 Project Structure
+## 📁 Project Structure
 
-Payflow
+```text
+Payflow/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── lib/
+│   │   └── hooks/
+│   └── public/
 │
-├── frontend
-│   ├── src
-│   ├── components
-│   ├── pages
-│   ├── lib
-│   └── hooks
-│
-└── backend
-    ├── src
-    ├── routes
-    ├── middleware
-    ├── models
-    ├── validations
-    └── config
+└── backend/
+    ├── src/
+    │   ├── routes/
+    │   ├── middleware/
+    │   ├── models/
+    │   ├── validations/
+    │   └── config/
+    └── package.json
+```
 
 
 
