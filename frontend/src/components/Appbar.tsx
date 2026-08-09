@@ -5,45 +5,39 @@ interface appbarprops{
 }
 export const Appbar=(props:appbarprops)=>{
     const navigate=useNavigate();
-    return <div className="bg-white shadow-md rounded-2xl px-8 py-5 flex justify-between items-center">
-             <div className="flex items-center gap-3">
+     return (
+  <div className="flex flex-col md:flex-row md:items-center md:justify-between px-4 md:px-8 py-4 border-b border-slate-200 bg-white shadow-sm gap-4">
 
-        <img
-            src={appLogo}
-            className="w-12 h-12"
-            alt="logo"
-        />
+    {/* Left Section */}
+    <div className="flex items-center gap-3 justify-center md:justify-start">
+      <img
+        src={appLogo}
+        className="w-10 h-10 md:w-12 md:h-12"
+        alt="logo"
+      />
 
-        <h1 className="text-4xl font-bold text-slate-900">
-            Payflow
-        </h1>
-
+      <h1 className="text-2xl md:text-4xl font-bold text-slate-900">
+        PayFlow
+      </h1>
     </div>
 
-            <div className="flex items-center gap-6">
-                <div className="flex flex-col justify-center h-full mr-4">
-                     
-                </div>
+    {/* Right Section */}
+    <div className="flex items-center justify-center md:justify-end gap-3">
 
-                <div className="rounded-full h-12 w-12 bg-slate-200 flex justify-center mt-1 mr-2">
-                    <div className="flex flex-col justify-center h-full text-xl">
-                        {props.firstName[0]?.toUpperCase()}
-                        
-                    </div>
-                    
-                </div>
+      <div className="rounded-full h-10 w-10 md:h-12 md:w-12 bg-slate-200 flex items-center justify-center text-lg font-semibold">
+        {props.firstName[0]?.toUpperCase()}
+      </div>
 
-                <button
-
-                       onClick={() => {
-                                localStorage.removeItem("token");
-                                navigate("/signin");
-                             }}
-                                className="bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition duration-300 shadow-md pr-4"
-        >
-            Logout
-      
-                </button>
-            </div>
-        </div>
+      <button
+        onClick={() => {
+          localStorage.removeItem("token");
+          navigate("/signin");
+        }}
+        className="bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white px-4 md:px-6 py-2 md:py-3 rounded-xl font-semibold transition duration-300 shadow-md"
+      >
+        Logout
+      </button>
+    </div>
+  </div>
+);
 }
