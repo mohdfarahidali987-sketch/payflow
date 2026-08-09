@@ -183,9 +183,6 @@ POST /api/v1/account/transfer
 B.Tech CSE | NIT Srinagar
 
 - GitHub: https://github.com/mohdfarahidali987-sketch
-- LinkedIn: *(Add your LinkedIn profile URL here)*
+- LinkedIn: https://www.linkedin.com/in/muhammed-farahid-95ab3a350/
 
-B.Tech CSE | NIT Srinagar
-
-GitHub:
-LinkedIn:
+ 
