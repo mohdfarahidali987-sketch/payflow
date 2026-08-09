@@ -1,13 +1,9 @@
 # 💳 Payflow
 
 ![React](https://img.shields.io/badge/React-19-blue)
-
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
-
 ![Node.js](https://img.shields.io/badge/Node.js-22-green)
-
 ![MongoDB](https://img.shields.io/badge/MongoDB-Database-brightgreen)
-
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
 A modern full-stack digital payment application built with the MERN stack that allows users to securely manage their accounts and transfer money in real time.
@@ -87,86 +83,97 @@ Payflow
     └── config
 
 
-    ## 🚀 Installation
 
-Clone the repository
+## 🚀 Installation
+
+### Clone the repository
 
 ```bash
 git clone https://github.com/mohdfarahidali987-sketch/payflow.git
-##Frontend
+cd payflow
+```
+
+### Frontend
+
+```bash
 cd frontend
 npm install
 npm run dev
-## Backend
+```
+
+### Backend
+
+```bash
 cd backend
 npm install
 npm run dev
-
+```
 
 ---
 
-# 7. Environment Variables
-
-```md
 ## 🔑 Environment Variables
 
-Backend
+### Backend
+
+Create a `.env` file inside the `backend` folder.
 
 ```env
-MONGO_URL=
-
-JWT_SECRET=
-
+MONGO_URL=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
 PORT=3000
-frontend
+```
 
+### Frontend
+
+Create a `.env` file inside the `frontend` folder.
+
+```env
 VITE_BACKEND_URL=http://localhost:3000
+```
 
- 
+---
 
- 
-
-# 8. API Endpoints
-
-```md
 ## 📡 API Endpoints
 
+### User
+
+```http
 POST /api/v1/user/signup
-
 POST /api/v1/user/signin
+GET  /api/v1/user/me
+GET  /api/v1/user/bulk
+```
 
-GET /api/v1/user/me
+### Account
 
-GET /api/v1/user/bulk
-
-GET /api/v1/account/balance
-
+```http
+GET  /api/v1/account/balance
 POST /api/v1/account/transfer
+```
 
-
+---
 
 ## 🚀 Future Improvements
 
 - Email Verification
-
 - Transaction History
-
 - Profile Management
-
 - Dark Mode
-
 - Admin Dashboard
-
 - Search Debouncing
-
 - Real-time Notifications
-
 - Unit Testing
 
+---
 
 ## 👨‍💻 Author
 
-Muhammed Farahid
+**Muhammed Farahid**
+
+B.Tech CSE | NIT Srinagar
+
+- GitHub: https://github.com/mohdfarahidali987-sketch
+- LinkedIn: *(Add your LinkedIn profile URL here)*
 
 B.Tech CSE | NIT Srinagar
 
