@@ -8,6 +8,22 @@
 
 A modern full-stack digital payment application built with the MERN stack that allows users to securely manage their accounts and transfer money in real time.
 
+
+
+## 🌐 Live Demo
+
+🔗 https://payflow-sooty-theta.vercel.app
+
+---
+
+## 🎥 Demo Video
+
+📥 **Download & Watch**
+
+👉 [PayFlow Demo (MP4)](./demo/payflow-demo.mp4)
+
+---
+
 ## 📸 Screenshots
 
 ### Dashboard
