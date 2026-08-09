@@ -12,15 +12,25 @@ A modern full-stack digital payment application built with the MERN stack that a
 
 ### Dashboard
 
-(Add screenshot here)
+![Dashboard](./screenshots/dashboard.png)
 
-### Send Money
-
-(Add screenshot here)
+---
 
 ### Sign In
 
-(Add screenshot here)
+![Sign In](./screenshots/signin.png)
+
+---
+
+### Sign Up
+
+![Sign Up](./screenshots/signup.png)
+
+---
+
+### Send Money
+
+![Send Money](./screenshots/send-money.png)
 
 
 ## ✨ Features
