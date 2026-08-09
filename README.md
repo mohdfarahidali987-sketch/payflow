@@ -18,9 +18,9 @@ A modern full-stack digital payment application built with the MERN stack that a
 
 ## 🎥 Demo Video
 
-📥 **Download & Watch**
+Watch a complete walkthrough of the application:
 
-👉 [PayFlow Demo (MP4)](./demo/payflow-demo.mp4)
+▶️ [PayFlow Demo](./demo/payflow-demo.mp4)
 
 ---
 
