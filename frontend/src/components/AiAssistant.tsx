@@ -39,37 +39,27 @@ export function AiAssistant() {
     loadStatusAndInsights();
   }, []);
 
-   
   async function askAssistant() {
-  if (!question.trim()) {
-    toast.error("Enter a question");
-    return;
+    if (!question.trim()) {
+      toast.error("Enter a question");
+      return;
+    }
+
+    setLoadingAsk(true);
+    try {
+      const response = await api.post("/api/v1/ai/assistant", {
+        question: question.trim(),
+      });
+      setAnswer(response.data.answer);
+    } catch (err: unknown) {
+      const message =
+        (err as { response?: { data?: { message?: string } } })?.response?.data
+          ?.message || "AI assistant unavailable";
+      toast.error(message);
+    } finally {
+      setLoadingAsk(false);
+    }
   }
-
-  setLoadingAsk(true);
-
-  try {
-    const response = await api.post("/api/v1/ai/assistant", {
-      question: question.trim(),
-    });
-
-    console.log("AI SUCCESS:", response.data);
-
-    setAnswer(response.data.answer);
-  } catch (err: any) {
-    console.log("AI ERROR:", err);
-    console.log("AI RESPONSE:", err?.response?.data);
-    console.log("AI STATUS:", err?.response?.status);
-
-    const message =
-      err?.response?.data?.message || "AI assistant unavailable";
-
-    toast.error(message);
-  } finally {
-    setLoadingAsk(false);
-  }
-}
-  
 
   return (
     <div className="mt-8 space-y-4">
@@ -96,13 +86,13 @@ export function AiAssistant() {
                 placeholder="e.g. How much did I spend on food this month?"
                 className="w-full border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
-             <button
-  onClick={askAssistant}
-  disabled={loadingAsk}
-  className="mt-3 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 text-white px-5 py-2 rounded-lg font-medium"
->
-  {loadingAsk ? "Thinking..." : "Ask PayFlow AI"}
-</button>
+              <button
+                onClick={askAssistant}
+                disabled={loadingAsk}
+                className="mt-3 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 text-white px-5 py-2 rounded-lg font-medium"
+              >
+                {loadingAsk ? "Thinking..." : "Ask PayFlow AI"}
+              </button>
               {answer ? (
                 <div className="mt-4 text-sm text-slate-700 whitespace-pre-wrap bg-slate-50 rounded-lg p-4">
                   {answer}
