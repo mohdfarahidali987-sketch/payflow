@@ -2,6 +2,8 @@ import { Appbar } from "../components/Appbar";
 import { Balance } from "../components/Balance";
 import { Users } from "../components/Users";
 import { TransactionHistory } from "../components/TransactionHistory";
+import { AnalyticsOverview } from "../components/AnalyticsOverview";
+import { AiAssistant } from "../components/AiAssistant";
 import { useEffect, useState } from "react";
 import { api } from "../lib/api";
 
@@ -41,6 +43,8 @@ export function Dashboard() {
 
       <div className="m-4 md:m-8">
         <Balance value={balance} />
+        <AnalyticsOverview />
+        <AiAssistant />
         <TransactionHistory />
         <Users />
       </div>

@@ -88,7 +88,7 @@ export function SendMoney() {
 
               setLoading(true);
               try {
-                await api.post("/api/v1/account/transfer", {
+                const response = await api.post("/api/v1/account/transfer", {
                   to: id,
                   amount: Number(amount),
                   description,
@@ -96,7 +96,14 @@ export function SendMoney() {
                 });
 
                 toast.success(`₹${amount} transferred to ${name}`);
-                setTimeout(() => navigate("/dashboard"), 1000);
+                if (response.data?.anomaly?.detected) {
+                  toast(
+                    response.data.anomaly.reason ||
+                      "Unusual transaction detected — amount is higher than your typical spend.",
+                    { icon: "⚠️", duration: 5000 }
+                  );
+                }
+                setTimeout(() => navigate("/dashboard"), 1200);
               } catch (err) {
                 const error = err as AxiosError<{ message?: string; massage?: string }>;
                 toast.error(

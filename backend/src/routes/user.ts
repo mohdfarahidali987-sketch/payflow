@@ -90,7 +90,9 @@ if(!isMatch){
         userId: user._id
     },
     process.env.JWT_SECRET!,
-      
+     {
+        expiresIn: "7d"
+    }
 );
   return res.status(200).json({
     massage:"sign in successfully ",

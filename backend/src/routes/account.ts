@@ -4,6 +4,8 @@ import { Account } from "../models/account.js";
 import { Transaction } from "../models/transaction.js";
 import mongoose from "mongoose";
 import { transferSchema } from "../validations/transaction.js";
+import { categorizeTransaction } from "../services/ai.js";
+import { detectAmountAnomaly } from "../services/anomaly.js";
 
 const router = Router();
 
@@ -25,7 +27,7 @@ router.post("/transfer", auth, async (req, res) => {
     });
   }
 
-  const { to, amount, description, category } = result.data;
+  const { to, amount, description, category: requestedCategory } = result.data;
 
   if (to === req.userId) {
     return res.status(400).json({
@@ -38,6 +40,18 @@ router.post("/transfer", auth, async (req, res) => {
       message: "Invalid receiver id",
     });
   }
+
+  // AI categorization (non-blocking for payment safety: falls back to Other / requested)
+  let category = requestedCategory;
+  if (description.trim()) {
+    const aiCategory = await categorizeTransaction(description, amount);
+    // Prefer AI when user left default Other; otherwise keep explicit user choice
+    if (requestedCategory === "Other" || !requestedCategory) {
+      category = aiCategory;
+    }
+  }
+
+  const anomaly = await detectAmountAnomaly(req.userId, amount);
 
   const session = await mongoose.startSession();
 
@@ -86,6 +100,7 @@ router.post("/transfer", auth, async (req, res) => {
           status: "SUCCESS",
           category,
           description: description || "",
+          isAnomaly: anomaly.isAnomaly,
         },
       ],
       { session }
@@ -96,6 +111,13 @@ router.post("/transfer", auth, async (req, res) => {
     return res.json({
       message: "Transfer successful",
       transactionId: transaction._id,
+      category,
+      anomaly: anomaly.isAnomaly
+        ? {
+            detected: true,
+            reason: anomaly.reason,
+          }
+        : { detected: false },
     });
   } catch (err) {
     await session.abortTransaction();
