@@ -10,5 +10,5 @@ export const signinSchema=z.object({
     username:z.email(),
     password:z.string().min(6)
 });
-// Kept for backward compatibility; prefer validations/transaction.ts
+ 
 export { transferSchema } from "./transaction.js";

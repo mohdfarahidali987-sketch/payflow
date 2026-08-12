@@ -114,7 +114,9 @@ export function AnalyticsOverview() {
                     cx="50%"
                     cy="50%"
                     outerRadius={90}
-                    label={({ category }) => category}
+                    label={({ name, percent }) =>
+                          `${name ?? ""} ${((percent ?? 0) * 100).toFixed(0)}%`
+}
                   >
                     {data.spendingByCategory.map((_, index) => (
                       <Cell key={index} fill={COLORS[index % COLORS.length]} />

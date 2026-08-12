@@ -2,10 +2,10 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import request from "supertest";
 import mongoose from "mongoose";
 import { MongoMemoryReplSet } from "mongodb-memory-server";
-import { createApp } from "../src/app.js";
-import { User } from "../src/models/user.js";
-import { Account } from "../src/models/account.js";
-import { Transaction } from "../src/models/transaction.js";
+import { createApp } from "../app.js";
+import { User } from "../models/user.js";
+import { Account } from "../models/account.js";
+import { Transaction } from "../models/transaction.js";
 
 process.env.JWT_SECRET = "test-secret";
 delete process.env.AI_API_KEY;
