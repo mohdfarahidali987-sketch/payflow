@@ -123,10 +123,19 @@ router.post("/assistant", auth, async (req, res) => {
     const { text } = await buildUserFinanceContext(req.userId);
     const answer = await askFinanceAssistant(parsed.data.question, text);
     return res.json({ answer });
-  } catch (error) {
-    console.error("AI assistant error:", error);
-    return res.status(500).json({ message: "AI assistant unavailable" });
-  }
+  } catch (error: any) {
+  console.error("AI assistant error:", {
+    message: error?.message,
+    status: error?.status,
+    code: error?.code,
+    type: error?.type,
+    response: error?.response?.data,
+  });
+
+  return res.status(500).json({
+    message: error?.message || "AI assistant unavailable",
+  });
+}
 });
 
 router.get("/insights", auth, async (req, res) => {
@@ -154,10 +163,19 @@ router.get("/insights", auth, async (req, res) => {
       insight,
       stats: { currentSummary, previousSummary },
     });
-  } catch (error) {
-    console.error("AI insights error:", error);
-    return res.status(500).json({ message: "AI insights unavailable" });
-  }
+  } catch (error: any) {
+  console.error("AI insights error:", {
+    message: error?.message,
+    status: error?.status,
+    code: error?.code,
+    type: error?.type,
+    response: error?.response?.data,
+  });
+
+  return res.status(500).json({
+    message: error?.message || "AI insights unavailable",
+  });
+}
 });
 
 router.get("/monthly-summary", auth, async (req, res) => {
@@ -206,10 +224,19 @@ router.get("/monthly-summary", auth, async (req, res) => {
         expenseChangePercent: changePercent,
       },
     });
-  } catch (error) {
-    console.error("AI monthly summary error:", error);
-    return res.status(500).json({ message: "Monthly summary unavailable" });
-  }
+  } catch (error: any) {
+  console.error("AI monthly summary error:", {
+    message: error?.message,
+    status: error?.status,
+    code: error?.code,
+    type: error?.type,
+    response: error?.response?.data,
+  });
+
+  return res.status(500).json({
+    message: error?.message || "Monthly summary unavailable",
+  });
+}
 });
 
 export default router;
