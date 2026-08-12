@@ -12,11 +12,15 @@ const categoryResponseSchema = z.object({
 
 function getClient() {
   const apiKey = process.env.AI_API_KEY;
+
   if (!apiKey) {
     return null;
   }
 
-  return new OpenAI({ apiKey });
+  return new OpenAI({
+    apiKey,
+    baseURL: "https://api.groq.com/openai/v1",
+  });
 }
 
 export function isAiConfigured() {
