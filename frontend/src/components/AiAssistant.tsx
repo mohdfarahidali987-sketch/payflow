@@ -40,25 +40,35 @@ export function AiAssistant() {
   }, []);
 
   async function askAssistant() {
-    if (!question.trim()) {
-      toast.error("Enter a question");
-      return;
-    }
+  async function askAssistant() {
+  if (!question.trim()) {
+    toast.error("Enter a question");
+    return;
+  }
 
-    setLoadingAsk(true);
-    try {
-      const response = await api.post("/api/v1/ai/assistant", {
-        question: question.trim(),
-      });
-      setAnswer(response.data.answer);
-    } catch (err: unknown) {
-      const message =
-        (err as { response?: { data?: { message?: string } } })?.response?.data
-          ?.message || "AI assistant unavailable";
-      toast.error(message);
-    } finally {
-      setLoadingAsk(false);
-    }
+  setLoadingAsk(true);
+
+  try {
+    const response = await api.post("/api/v1/ai/assistant", {
+      question: question.trim(),
+    });
+
+    console.log("AI SUCCESS:", response.data);
+
+    setAnswer(response.data.answer);
+  } catch (err: any) {
+    console.log("AI ERROR:", err);
+    console.log("AI RESPONSE:", err?.response?.data);
+    console.log("AI STATUS:", err?.response?.status);
+
+    const message =
+      err?.response?.data?.message || "AI assistant unavailable";
+
+    toast.error(message);
+  } finally {
+    setLoadingAsk(false);
+  }
+}
   }
 
   return (

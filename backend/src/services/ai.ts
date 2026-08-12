@@ -38,7 +38,7 @@ export async function categorizeTransaction(
 
   try {
     const completion = await client.chat.completions.create({
-      model: process.env.AI_MODEL || "gpt-4o-mini",
+      model: process.env.AI_MODEL || "llama-3.1-8b-instant",
       temperature: 0,
       response_format: { type: "json_object" },
       messages: [
