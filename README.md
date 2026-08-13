@@ -14,6 +14,36 @@ Users can create accounts, manage their wallet balance, transfer money, track tr
 
 **Backend API:** https://payflow-backend-9314.onrender.com
 
+
+## 📸 Screenshots
+
+### SignUp
+![PayFlow Signup](./screenshots/signup.png)
+
+### SignIn
+![PayFlow SignIn](./screenshots/signIn.png)
+
+
+### Dashboard
+![PayFlow Dashboard](./screenshots/dashboard1.png)
+![PayFlow Dashboard](./screenshots/dashboard2.png)
+![PayFlow Dashboard](./screenshots/dashboard3.png)
+
+### Send Money
+![Send Money](./screenshots/sendMoney.png)
+
+
+### AI Financial Assistant
+![AI Assistant](./screenshots/ai-assistant.png)
+
+---
+
+## 🎥 Demo
+
+[![PayFlow Demo](./screenshots/demoVidio.mp4)]
+
+ 
+
 ---
 
 ## ✨ Features
