@@ -23,15 +23,16 @@ Users can create accounts, manage their wallet balance, transfer money, track tr
 ### SignIn
 ![PayFlow SignIn](./screenshots/signin.png)
 
-### Dashboard
-## Dashboard1
-![PayFlow Dashboard1](./screenshots/dashboard1.png)
- ## Dashboard2
- ![PayFlow Dashboard1](./screenshots/dashboard2.png)
- ## Dashboard3
- ![PayFlow Dashboard3](./screenshots/dashboard3.png)
+### 📊 Dashboard
 
-### Send Money
+![PayFlow Dashboard 1](./screenshots/dashboard1.png)
+
+![PayFlow Dashboard 2](./screenshots/dashboard2.png)
+
+![PayFlow Dashboard 3](./screenshots/dashboard3.png)
+
+### 💸 Send Money
+
 ![Send Money](./screenshots/sendMoney.png)
 
 ---
