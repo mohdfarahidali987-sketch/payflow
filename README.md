@@ -1,77 +1,138 @@
-# 💳 Payflow
+ # 💸 PayFlow
 
-![React](https://img.shields.io/badge/React-19-blue)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
-![Node.js](https://img.shields.io/badge/Node.js-22-green)
-![MongoDB](https://img.shields.io/badge/MongoDB-Database-brightgreen)
-![License](https://img.shields.io/badge/License-MIT-yellow)
+> A full-stack digital payment and personal finance management platform with AI-powered financial insights.
 
-A modern full-stack digital payment application built with the MERN stack that allows users to securely manage their accounts and transfer money in real time.
+PayFlow is a modern full-stack payment application designed to simulate real-world digital wallet functionality while providing users with powerful financial analytics and AI-powered insights.
 
-
-
-## 🌐 Live Demo
-
-🔗 https://payflow-sooty-theta.vercel.app
+Users can create accounts, manage their wallet balance, transfer money, track transactions, analyze spending patterns, and interact with an AI financial assistant.
 
 ---
 
-## 🎥 Demo Video
+## 🚀 Live Demo
 
-Watch a complete walkthrough of the application:
+**Frontend:** Add your Vercel URL here
 
-▶️ [PayFlow Demo](https://github.com/mohdfarahidali987-sketch/payflow/blob/main/demo/payflow-demo.mp4)
-
----
-
-## 📸 Screenshots
-
-### Dashboard
-
-![Dashboard](./screenshots/dashboard.png)
+**Backend API:** https://payflow-backend-9314.onrender.com
 
 ---
-
-### Sign In
-
-![Sign In](./screenshots/signin.png)
-
----
-
-### Sign Up
-
-![Sign Up](./screenshots/signup.png)
-
----
-
-### Send Money
-
-![Send Money](./screenshots/send-money.png)
-
 
 ## ✨ Features
 
-- 🔐 JWT Authentication
-- 🔒 Protected Routes
-- 👤 User Registration & Login
-- 💰 Account Balance Management
-- 💸 Secure Money Transfer
-- 🔍 User Search
-- 🚪 Logout
-- 🍞 Toast Notifications
-- ⚡ Axios API Instance
-- 🛡️ Request & Response Interceptors
-- 🎨 Responsive UI with Tailwind CSS
+### 🔐 Authentication
 
-## 🛠 Tech Stack
+- User registration and login
+- JWT-based authentication
+- Protected API routes
+- Secure password handling
+- Authenticated user sessions
+
+### 💰 Digital Wallet
+
+- Initial wallet balance
+- View available balance
+- Send money to other users
+- Receive money from other users
+- Balance updates after transactions
+
+### 💳 Transactions
+
+- Create debit and credit transactions
+- Transaction history
+- Transaction status tracking
+- Transaction descriptions
+- Transaction categories
+- Search transactions
+- Filter by category
+- Sort transactions
+- Filter transactions by date range
+- Pagination
+
+### 📊 Financial Analytics
+
+PayFlow provides a financial dashboard to help users understand their spending.
+
+- Current balance
+- Monthly income
+- Monthly expenses
+- Monthly transaction count
+- Spending by category
+- Income vs Expenses visualization
+- Monthly financial statistics
+- Category-wise spending analysis
+
+### 🤖 PayFlow AI
+
+PayFlow includes an AI-powered financial assistant.
+
+#### AI Financial Assistant
+
+Users can ask questions about their transaction history, such as:
+
+> "How much did I spend on food this month?"
+
+The AI generates answers using the user's actual transaction data.
+
+#### AI Spending Insights
+
+PayFlow analyzes spending patterns and generates useful observations about the user's financial activity.
+
+#### Monthly Financial Summary
+
+The AI generates a concise monthly summary containing:
+
+- Total income
+- Total expenses
+- Top spending category
+- Expense change compared with the previous month
+- A practical financial recommendation
+
+#### AI Transaction Categorization
+
+Transactions can be automatically categorized using AI into supported categories such as:
+
+- Food
+- Travel
+- Shopping
+- Entertainment
+- Education
+- Healthcare
+- Utilities
+- Other
+
+AI functionality is implemented using the Groq API through an OpenAI-compatible SDK interface.
+
+---
+
+## 📈 Dashboard
+
+The PayFlow dashboard provides a centralized view of the user's financial activity.
+
+### Dashboard includes:
+
+- Available balance
+- Financial overview
+- Spending by category chart
+- Income vs expenses chart
+- AI financial assistant
+- AI spending insight
+- Monthly financial summary
+- Transaction history
+- User search
+- Send money functionality
+
+---
+
+## 🛠️ Tech Stack
 
 ### Frontend
 
 - React
 - TypeScript
+- Vite
 - Tailwind CSS
 - React Router
 - Axios
+- Recharts
 - React Hot Toast
 
 ### Backend
@@ -79,122 +140,59 @@ Watch a complete walkthrough of the application:
 - Node.js
 - Express.js
 - TypeScript
-- JWT
-- bcrypt
-- Zod
-
-### Database
-
 - MongoDB
 - Mongoose
+- JWT
+- Zod
+- OpenAPI / Swagger
+- REST API
 
+### AI
 
-## 📁 Project Structure
+- Groq API
+- OpenAI-compatible SDK
+- AI-powered transaction categorization
+- AI financial assistant
+- AI spending insights
+- AI monthly summaries
+
+### Testing
+
+- Vitest
+- Supertest
+- MongoDB Memory Server
+
+### Deployment
+
+- Vercel — Frontend
+- Render — Backend
+- MongoDB Atlas — Database
+
+---
+
+## 🏗️ Project Architecture
 
 ```text
-Payflow/
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── lib/
-│   │   └── hooks/
-│   └── public/
-│
-└── backend/
-    ├── src/
-    │   ├── routes/
-    │   ├── middleware/
-    │   ├── models/
-    │   ├── validations/
-    │   └── config/
-    └── package.json
-```
-
-
-
-## 🚀 Installation
-
-### Clone the repository
-
-```bash
-git clone https://github.com/mohdfarahidali987-sketch/payflow.git
-cd payflow
-```
-
-### Frontend
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-### Backend
-
-```bash
-cd backend
-npm install
-npm run dev
-```
-
----
-
-## 🔑 Environment Variables
-
-### Backend
-
-Create a `.env` file inside the `backend` folder.
-
-```env
-MONGO_URL=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
-PORT=3000
-```
-
-### Frontend
-
-Create a `.env` file inside the `frontend` folder.
-
-```env
-VITE_BACKEND_URL=http://localhost:3000
-```
-
----
-
-## 📡 API Endpoints
-
-### User
-
-```http
-POST /api/v1/user/signup
-POST /api/v1/user/signin
-GET  /api/v1/user/me
-GET  /api/v1/user/bulk
-```
-
-### Account
-
-```http
-GET  /api/v1/account/balance
-POST /api/v1/account/transfer
-```
-
----
-
-## 🚀 Future Improvements
-
-- Email Verification
-- Transaction History
-- Profile Management
-- Dark Mode
-- Admin Dashboard
-- Search Debouncing
-- Real-time Notifications
-- Unit Testing
-
----
-
+                 ┌──────────────────────┐
+                 │      PayFlow UI      │
+                 │ React + TypeScript   │
+                 └──────────┬───────────┘
+                            │
+                            │ REST API
+                            ▼
+                 ┌──────────────────────┐
+                 │    Express Server    │
+                 │   Node.js + TS       │
+                 └──────────┬───────────┘
+                            │
+              ┌─────────────┴─────────────┐
+              │                           │
+              ▼                           ▼
+     ┌─────────────────┐        ┌─────────────────┐
+     │  MongoDB Atlas  │        │    Groq AI      │
+     │   Database      │        │   AI Services   │
+     └─────────────────┘        └─────────────────┘
+     
 ## 👨‍💻 Author
 
 **Muhammed Farahid**
