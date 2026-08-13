@@ -21,7 +21,7 @@ Users can create accounts, manage their wallet balance, transfer money, track tr
 ![PayFlow Signup](./screenshots/signup.png)
 
 ### SignIn
-![PayFlow SignIn](./screenshots/signIn.png)
+![PayFlow SignIn](./screenshots/signin.png)
 
 
 ### Dashboard
@@ -31,10 +31,6 @@ Users can create accounts, manage their wallet balance, transfer money, track tr
 
 ### Send Money
 ![Send Money](./screenshots/sendMoney.png)
-
-
-### AI Financial Assistant
-![AI Assistant](./screenshots/ai-assistant.png)
 
 ---
 
