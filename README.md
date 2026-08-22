@@ -99,13 +99,14 @@ https://payrescue-ml.onrender.com/health
 
 ---
 
-# 🎥 Demo Video
+## 🎥 Demo Video
 
-> Add the complete project demonstration video here.
+A complete walkthrough of PayFlow, including digital payments,
+financial analytics, PayFlow AI, and ML-powered PayRescue AI.
 
-**Demo Video:**
+[![PayFlow Demo](./screenshots/dashboard1.png)](https://youtu.be/IAfX-qtw3v8)
 
-[▶️ Watch PayFlow Demo](#)
+**▶️ Click the preview above to watch the complete demo.**
 
 ### Recommended Demo Flow
 
