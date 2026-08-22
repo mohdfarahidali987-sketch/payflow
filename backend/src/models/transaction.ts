@@ -17,7 +17,50 @@ export const TRANSACTION_STATUSES = ["SUCCESS", "FAILED", "PENDING"] as const;
 export type TransactionStatus = (typeof TRANSACTION_STATUSES)[number];
 
 export const TRANSACTION_TYPES = ["TRANSFER"] as const;
+
 export type TransactionType = (typeof TRANSACTION_TYPES)[number];
+export const PAYMENT_METHODS = [
+  "UPI",
+  "CARD",
+  "NET_BANKING",
+  "WALLET",
+] as const;
+
+export type PaymentMethod = (typeof PAYMENT_METHODS)[number];
+
+export const FAILURE_REASONS = [
+  "INSUFFICIENT_FUNDS",
+  "BANK_ERROR",
+  "NETWORK_ERROR",
+  "TIMEOUT",
+  "LIMIT_EXCEEDED",
+  "INVALID_DETAILS",
+  "UNKNOWN",
+] as const;
+
+export type FailureReason = (typeof FAILURE_REASONS)[number];
+
+export const RECOVERY_ACTIONS = [
+  "RETRY_NOW",
+  "RETRY_LATER",
+  "SEND_REMINDER",
+  "CHANGE_PAYMENT_METHOD",
+  "ESCALATE",
+  "NO_ACTION",
+] as const;
+
+export type RecoveryAction = (typeof RECOVERY_ACTIONS)[number];
+
+export const RECOVERY_STATUSES = [
+  "NOT_ANALYZED",
+  "ANALYZED",
+  "ACTION_SCHEDULED",
+  "RECOVERED",
+  "FAILED",
+  "ESCALATED",
+] as const;
+
+export type RecoveryStatus = (typeof RECOVERY_STATUSES)[number];
 
 const transactionSchema = new mongoose.Schema(
   {
@@ -64,6 +107,55 @@ const transactionSchema = new mongoose.Schema(
       default: "",
       maxlength: 200,
     },
+
+    paymentMethod: {
+  type: String,
+  enum: PAYMENT_METHODS,
+  default: "UPI",
+},
+
+failureReason: {
+  type: String,
+  enum: FAILURE_REASONS,
+  default: "UNKNOWN",
+},
+
+retryCount: {
+  type: Number,
+  default: 0,
+  min: 0,
+},
+
+recoveryProbability: {
+  type: Number,
+  min: 0,
+  max: 100,
+  default: null,
+},
+
+recoveryAction: {
+  type: String,
+  enum: RECOVERY_ACTIONS,
+  default: "NO_ACTION",
+},
+
+recoveryStatus: {
+  type: String,
+  enum: RECOVERY_STATUSES,
+  default: "NOT_ANALYZED",
+},
+
+recoveredAmount: {
+  type: Number,
+  min: 0,
+  default: 0,
+},
+
+recoveryReasoning: {
+  type: String,
+  default: "",
+  maxlength: 1000,
+},
     isAnomaly: {
       type: Boolean,
       default: false,
@@ -79,3 +171,5 @@ transactionSchema.index({ senderId: 1, createdAt: -1 });
 transactionSchema.index({ receiverId: 1, createdAt: -1 });
 
 export const Transaction = mongoose.model("Transaction", transactionSchema);
+
+

@@ -4,6 +4,7 @@ import { Users } from "../components/Users";
 import { TransactionHistory } from "../components/TransactionHistory";
 import { AnalyticsOverview } from "../components/AnalyticsOverview";
 import { AiAssistant } from "../components/AiAssistant";
+import { PayRescue } from "../components/PayRescue";
 import { useEffect, useState } from "react";
 import { api } from "../lib/api";
 
@@ -45,6 +46,7 @@ export function Dashboard() {
         <Balance value={balance} />
         <AnalyticsOverview />
         <AiAssistant />
+        <PayRescue />
         <TransactionHistory />
         <Users />
       </div>

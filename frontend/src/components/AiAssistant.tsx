@@ -18,7 +18,7 @@ export function AiAssistant() {
         setConfigured(status.data.configured);
 
         if (!status.data.configured) {
-          setInsight("Set AI_API_KEY on the backend to enable PayFlow AI.");
+          setInsight("Add AI_API_KEY to the backend environment.");
           return;
         }
 
