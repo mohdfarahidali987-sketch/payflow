@@ -132,40 +132,7 @@ financial analytics, PayFlow AI, and ML-powered PayRescue AI.
 19. View Recovery Result
 ```
 
----
-
-# 📌 Table of Contents
-
-- [Overview](#-overview)
-- [Problem Statement](#-problem-statement)
-- [Solution](#-solution)
-- [Core Features](#-core-features)
-- [Authentication](#-authentication)
-- [Digital Wallet](#-digital-wallet)
-- [Money Transfer](#-money-transfer)
-- [User Search](#-user-search)
-- [Transaction Management](#-transaction-management)
-- [Financial Analytics](#-financial-analytics)
-- [PayFlow AI](#-payflow-ai)
-- [PayRescue AI](#-payrescue-ai)
-- [Machine Learning Recovery Engine](#-machine-learning-recovery-engine)
-- [AI Recovery Decision Engine](#-ai-recovery-decision-engine)
-- [Recovery Safety Policy](#-recovery-safety-policy)
-- [Recovery Agent](#-recovery-agent)
-- [System Architecture](#-system-architecture)
-- [Technology Stack](#-technology-stack)
-- [Project Structure](#-project-structure)
-- [API Overview](#-api-overview)
-- [ML API](#-ml-api)
-- [Environment Variables](#-environment-variables)
-- [Local Development](#-local-development)
-- [Deployment](#-deployment)
-- [Security](#-security)
-- [End-to-End Example](#-end-to-end-example)
-- [Future Improvements](#-future-improvements)
-- [Author](#-author)
-
----
+ ----
 
 # 🚀 Overview
 
