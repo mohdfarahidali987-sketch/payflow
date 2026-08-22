@@ -70,7 +70,7 @@ https://payrescue-ml.onrender.com/health
 
 <!-- Add screenshot here -->
 
-![PayRescue AI](./screenshots/payrescue.png)
+![PayRescue AI](./screenshots/createfailed.png)
 
 ---
 
@@ -78,7 +78,7 @@ https://payrescue-ml.onrender.com/health
 
 <!-- Add screenshot here -->
 
-![ML Payment Analysis](./screenshots/ml-analysis.png)
+![ML Payment Analysis](./screenshots/analysis.png)
 
 ---
 
@@ -87,6 +87,7 @@ https://payrescue-ml.onrender.com/health
 <!-- Add screenshot here -->
 
 ![Recovery Decision](./screenshots/recovery-decision.png)
+
 
 ---
 
